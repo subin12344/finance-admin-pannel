@@ -10,9 +10,9 @@ export const loginApi = (password) => async (dispatch) => {
         const response = await post('/login', { password });
 
         const token = response?.token;
-        const user = response?.name;
+        const user = response;
      
-        localStorage.setItem('authToken', token);
+        localStorage.setItem('authUser', JSON.stringify(response));
         dispatch({ type: LOGIN_SUCCESS, payload: user });
     } catch (error) {
         console.error('Error during login:', error);

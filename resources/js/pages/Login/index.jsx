@@ -3,8 +3,7 @@ import { useForm } from 'react-hook-form';
 import { Helmet } from 'react-helmet';
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { loginApi } from '../store/actions';
-// import { loginUser } from '../store/auth/login/action';
+import { loginApi } from '../../store/actions';
 
 const Login = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
