@@ -31,10 +31,10 @@ Route::prefix('v1/rest')->group(function () {
             Route::post('customers/update/{id}', 'update');
         });
         Route::controller(FFiscYearController::class)->group(function () {
-            Route::get('f-fisc_year/search/{page?}', 'search');
-            Route::post('f-fisc_year/create', 'store');
-            Route::get('f-fisc_year/fetch/{id}', 'edit');
-            Route::post('f-fisc_year/update/{id}', 'update');
+            Route::get('f-fisc-year/search/{page?}', 'search');
+            Route::post('f-fisc-year/create', 'store');
+            Route::get('f-fisc-year/fetch/{id}', 'edit');
+            Route::post('f-fisc-year/update/{id}', 'update');
         });
 
     });
