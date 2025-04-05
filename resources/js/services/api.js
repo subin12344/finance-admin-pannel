@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: '/api', // Laravel API base URL
+  baseURL: '/api/v1/rest', // Laravel API base URL
   headers: {
     'Content-Type': 'application/json',
   },

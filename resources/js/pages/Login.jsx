@@ -13,9 +13,9 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { token, user } = await login(credentials);
+      const { token, name } = await login(credentials);
       localStorage.setItem('token', token);
-      setUser(user);
+      setUser(name);
       navigate('/dashboard');
     } catch (error) {
       console.error('Login failed:', error);

@@ -11,6 +11,7 @@ import { useNavigate } from 'react-router-dom';
 const AdminDashboard = () => {
   const [users, setUsers] = useState([]);
   const { user, setUser } = useContext(AuthContext);
+
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -18,7 +19,7 @@ const AdminDashboard = () => {
       .then((data) => setUsers(data))
       .catch((error) => console.error('Failed to fetch users', error));
   }, []);
-
+console.log(',ss',users);
   const handleLogout = async () => {
     await logout();
     setUser(null);
@@ -30,8 +31,8 @@ const AdminDashboard = () => {
       <Sidebar />
       <div className="main-content">
         <Header user={user} onLogout={handleLogout} />
-        <h1>Admin Dashboard</h1>
-        
+        <h1>Admin Dashboard  </h1>
+
       </div>
     </div>
   );

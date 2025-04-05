@@ -23,6 +23,10 @@ Route::controller(UserController::class)->group(function () {
 });
 Route::prefix('v1/rest')->group(function () {
     Route::group(['middleware' => ['auth:sanctum']], function () {
+        Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
+            $user = $request->user();
+            return $user;
+        });
         // customer
         Route::controller(FCustomerController::class)->group(function () {
             Route::get('customers/search/{page?}', 'search');
@@ -36,6 +40,5 @@ Route::prefix('v1/rest')->group(function () {
             Route::get('f-fisc-year/fetch/{id}', 'edit');
             Route::post('f-fisc-year/update/{id}', 'update');
         });
-
     });
 });
